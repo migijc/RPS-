@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Global Variables
+            let playerScore= 0;
+            let computerScore=0;
+            let counter=0;
+            
+        //anonymous function stored in variable whoWins to give winner message when depending on score. (called in Game())
+            let whoWins= function(){
+            if(playerScore > computerScore){
+                console.log(`GameOver.. Humans for the win! You won ${playerScore} - ${computerScore}!`);
+                } else if (playerScore < computerScore){
+                console.log(`GameOver.. The Machine Wins ${computerScore} - ${playerScore}!`);
+                } else {
+                console.log("GameOver.. Its a tie!");
+                }
+            }  
+           
+        //anonymous function created to make a random selection for computer "Choice of Weapon"
+        let computerPlay =  function (){   
+        let computerOptions= ["Rock", "Paper", "scissors"];
+        let computerRandom= Math.floor(Math.random() * computerOptions.length);
+            switch(computerRandom) {
+                case 0:
+                    return ("Rock");
+                    break;
+
+                case 1:
+                    return ("Paper");
+                    break;
+
+                case 2:
+                    return ("Scissors");
+                    break;
+                    default:
+                        "something went wrong";
+            }
+        }
+        //Function created to play one game of RPS with given parameters and advise the winner
+        function oneRound(playerSelection, computerSelection) { 
+            if (playerSelection ==  computerSelection){
+                console.log("You tied, score stays the same!");
+            } else if (playerSelection== "Rock" && computerSelection== "Paper"){
+                console.log("You lose, Paper beats Rock");
+            } else if (playerSelection =="Rock" && computerSelection== "Scissors"){
+                console.log("You Win!, Rock beats Scissors!");
+            }else if (playerSelection== "Paper" && computerSelection== "Scissors"){
+                console.log("You lose, Scissors beats Paper");
+            } else if (playerSelection =="Paper" && computerSelection== "Rock"){
+                console.log("You Win!, Paper beats Rock!");
+            } else if (playerSelection== "Scissors" && computerSelection== "Rock"){
+                console.log("You lose, Rock beats Scissors");
+            } else if (playerSelection =="Scissors" && computerSelection== "Paper") {
+                console.log("You Win!, Scissors beat Paper!");
+            } else {
+                console.log("Something Went Wrong");
+            }
+            }
+            //game() runs the whole game, 
+      function game(){
+           let playerSelection= prompt("Choose your Weapon");
+           let x= computerPlay();
+           oneRound(playerSelection, x);
+            console.log(`you have played ${counter} game(s)`);
+                switch (true){
+                    case (playerSelection == "Rock" && x == "Scissors"):
+                    case (playerSelection == "Paper" && x == "Rock"):
+                    case (playerSelection == "Scissors" && x == "Paper"):  
+                         playerScore++;
+                          console.log(playerScore);
+                          console.log(computerScore);
+                          break;
+                    case (x== "Rock" && playerSelection == "Scissors"): 
+                    case (x == "Paper" && playerSelection == "Rock"): 
+                    case (x == "Scissors" && playerSelection == "Paper"): 
+                            computerScore++;
+                            console.log(playerScore);
+                            console.log(computerScore);
+                          break;
+                    case (playerSelection== x):
+                            console.log(playerScore);
+                    console.log(computerScore);
+                          break;
+                          default:
+                            console.log("something is not right here");
+                            console.log(` Make sure your spelling is correct. you typed: ${playerSelection}`);
+                 }   
+            console.log(`Playerscore = ${playerScore}`);
+            console.log(`ComputerScore = ${computerScore}`);
+                 if (counter == 5){
+                    console.log(whoWins());
+                 }
+        }
+        //for loop to keep repeating game() until 5 games have been played.  
+        for (counter = 1; counter <= 4; counter++){
+                game();
+            }
+     
+        game();
+    </script>
+</body>
+</html>

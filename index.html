@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RPS</title>
 </head>
+
 <body>
+
     <script>
+
         //Global Variables
             let playerScore= 0;
             let computerScore=0;
@@ -24,7 +27,7 @@
                 }
             }  
            
-        //anonymous function created to make a random selection for computer "Choice of Weapon"
+        //anonymous function created to make a random selection for computer selection.
         let computerPlay =  function (){   
         let computerOptions= ["Rock", "Paper", "scissors"];
         let computerRandom= Math.floor(Math.random() * computerOptions.length);
@@ -64,35 +67,41 @@
                 console.log("Something Went Wrong");
             }
             }
-            //game() runs the whole game, 
+            //game() runs the whole game 
+                   //Pseudo: Function game asks player to return a "weapon", function computerPlay is called 
+                   //and a random selection is stored in a variable x as computer selection. Function oneRound is called and both player and computer
+                   //selections are evaluated to return a result for that particular round. Player selection and computer selectiction (x)
+                   //are evaluated again to keep a score depending on the winner of the round by evaluating the expression (True), if any
+                   //of the possible outcomes result to (True) the player score or computer score increases by 1 or remain depending on the outcome.
+                   //Will print both player and computer score and if counter hits 5 the function whoWins is called to declare winner and message       
       function game(){
            let playerSelection= prompt("Choose your Weapon");
            let x= computerPlay();
            oneRound(playerSelection, x);
-            console.log(`you have played ${counter} game(s)`);
-                switch (true){
-                    case (playerSelection == "Rock" && x == "Scissors"):
-                    case (playerSelection == "Paper" && x == "Rock"):
-                    case (playerSelection == "Scissors" && x == "Paper"):  
-                         playerScore++;
-                          console.log(playerScore);
-                          console.log(computerScore);
-                          break;
-                    case (x== "Rock" && playerSelection == "Scissors"): 
-                    case (x == "Paper" && playerSelection == "Rock"): 
-                    case (x == "Scissors" && playerSelection == "Paper"): 
-                            computerScore++;
-                            console.log(playerScore);
-                            console.log(computerScore);
-                          break;
-                    case (playerSelection== x):
-                            console.log(playerScore);
-                    console.log(computerScore);
-                          break;
-                          default:
-                            console.log("something is not right here");
-                            console.log(` Make sure your spelling is correct. you typed: ${playerSelection}`);
-                 }   
+           console.log(`you have played ${counter} game(s)`);
+            switch (true){
+                case (playerSelection == "Rock" && x == "Scissors"):
+                case (playerSelection == "Paper" && x == "Rock"):
+                case (playerSelection == "Scissors" && x == "Paper"):  
+                        playerScore++;
+                        console.log(playerScore);
+                        console.log(computerScore);
+                        break;
+                case (x== "Rock" && playerSelection == "Scissors"): 
+                case (x == "Paper" && playerSelection == "Rock"): 
+                case (x == "Scissors" && playerSelection == "Paper"): 
+                        computerScore++;
+                        console.log(playerScore);
+                        console.log(computerScore);
+                        break;
+                case (playerSelection== x):
+                        console.log(playerScore);
+                        console.log(computerScore);
+                        break;
+                        default:
+                        console.log("something is not right here");
+                        console.log(` Make sure your spelling is correct. you typed: ${playerSelection}`);
+                    }   
             console.log(`Playerscore = ${playerScore}`);
             console.log(`ComputerScore = ${computerScore}`);
                  if (counter == 5){
@@ -105,6 +114,7 @@
             }
      
         game();
+
     </script>
 </body>
 </html>

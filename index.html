@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
 
 </head>
 
@@ -27,6 +30,15 @@
         <div class="playerScore">Player Score: 0</div>
         <div class="computerScore">Computer Score: 0</div>
     </div>
+</div>
+
+<div class="rulesContainer">
+    <h3 class="rulesHeader">Da Rules</h3>
+    <p class="gameRules">Classic game of "Rock, Paper, Scissors". The game is simple, press any of the buttons to 
+                            select that "weapon" against the computer. Look at the score and choose wisely for the next round. 
+                            The first player to 5 wins the game. Dont forget, rock beats scissors, scissors beats paper and paper
+                             beat rock. Do you have what it takes to beat the machine?
+    </p>
 </div>
 
 <div class="footer">
@@ -149,54 +161,6 @@
             }
             
             }
-            //game() runs the whole game 
-                   //Pseudo: Function game asks player to return a "weapon", function computerPlay is called 
-                   //and a random selection is stored in a variable x as computer selection. Function oneRound is called and both player and computer
-                   //selections are evaluated to return a result for that particular round. Player selection and computer selectiction (x)
-                   //are evaluated again to keep a score depending on the winner of the round by evaluating the expression (True), if any
-                   //of the possible outcomes result to (True) the player score or computer score increases by 1 or remain depending on the outcome.
-                   //Will print both player and computer score and if counter hits 5 the function whoWins is called to declare winner and message       
-      function scoreKeeper(playerSelection, y){
-           console.log(`you have played ${counter} game(s)`);
-            switch (true){
-                case (playerSelection == "Rock" && y == "Scissors"):
-                case (playerSelection == "Paper" && y == "Rock"):
-                case (playerSelection == "Scissors" && y == "Paper"):  
-                        playerScore++;
-                        console.log(playerScore);
-                        console.log(computerScore);
-                        break;
-                case (y== "Rock" && playerSelection == "Scissors"): 
-                case (y == "Paper" && playerSelection == "Rock"): 
-                case (y == "Scissors" && playerSelection == "Paper"): 
-                        computerScore++;
-                        console.log(playerScore);
-                        console.log(computerScore);
-                        break;
-                case (playerSelection== y):
-                        console.log(playerScore);
-                        console.log(computerScore);
-                        break;
-                        default:
-                        console.log("something is not right here");
-                        console.log(` Make sure your spelling is correct, 
-                                You typed: ${playerSelection}`);
-                        console.log(y)
-                    }   
-                
-            //console.log(`Playerscore = ${playerScore}`);
-            //console.log(`ComputerScore = ${computerScore}`);
-                 //if (counter == 5){
-                    //console.log(whoWins());
-                // }
-        }
-        //for loop to keep repeating game() until 5 games have been played.  
-        //for (counter = 1; counter <= 4; counter++){
-                
-           // }
-     
-       
-
     </script>
 </body>
 </html>

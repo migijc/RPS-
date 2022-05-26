@@ -33,6 +33,7 @@ font-family: 'Varela Round', sans-serif;
     border: 3px solid #e76f51;
     font-weight: bold;
     font-family: 'Varela Round', sans-serif;
+    box-shadow: 6px 6px 10px black;
     
     
 
@@ -52,7 +53,7 @@ font-family: 'Varela Round', sans-serif;
     width: 90px;
     border-radius: 90px;
     border: 3px solid #e9c46a;
-    
+    box-shadow: 6px 6px 10px black;
     font-family: 'Varela Round', sans-serif;
 
 }
@@ -72,6 +73,7 @@ font-family: 'Varela Round', sans-serif;
     font-family: 'Varela Round', sans-serif;
     border-radius: 90px;
     border: 3px solid #f4a261;
+    box-shadow: 6px 6px 10px black;
     
 }
 

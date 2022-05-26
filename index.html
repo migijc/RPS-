@@ -56,10 +56,20 @@
         const machineScore= document.querySelector(".computerScore")
         
 
+        let removeClass= function(e){
+           if(e.propertyName !== "transform") return;
+                this.classList.remove("clicked")
+                console.log(e.propertyName)
+           }
+        
+        
+
         console.log(allButtons)
         allButtons.forEach((button) => {
             button.addEventListener('click', () => {
                 let y= computerPlay();
+                button.classList.add("clicked");
+                allButtons.forEach(button => button.addEventListener("transitionend", removeClass))
                 oneRound(button.textContent, y) 
                 counter++
                 gamesPlayed.textContent= `Games Played: ${counter}`;
@@ -89,11 +99,18 @@
                                     You typed: ${button.textContent}`);
                             console.log(y)
                     } 
+                    
+                
                 if(playerScore==5 || computerScore==5){
                     whoWins();
                 }      
             })
+            
         })
+        
+        
+
+        
 
         
 

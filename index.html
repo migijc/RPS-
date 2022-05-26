@@ -80,18 +80,18 @@
                     case (button.textContent == "Scissors" && y == "Paper"):  
                             playerScore++;
                             humanScore.textContent=(`Player Score: ${playerScore}`);
-                            machineScore.textContent=(`computer Score: ${computerScore}`);
+                            machineScore.textContent=(`Computer Score: ${computerScore}`);
                             break;
                     case (y== "Rock" && button.textContent == "Scissors"): 
                     case (y == "Paper" && button.textContent == "Rock"): 
                     case (y == "Scissors" && button.textContent == "Paper"): 
                             computerScore++;
                             humanScore.textContent=(`Player Score: ${playerScore}`);
-                            machineScore.textContent=(`computer Score: ${computerScore}`);
+                            machineScore.textContent=(`Computer Score: ${computerScore}`);
                             break;
                     case (button.textContent== y):
                             humanScore.textContent=(`Player Score: ${playerScore}`);
-                            machineScore.textContent=(`computer Score: ${computerScore}`);
+                            machineScore.textContent=(`Computer Score: ${computerScore}`);
                             break;
                             default:
                             console.log("something is not right here");
@@ -103,6 +103,7 @@
                 
                 if(playerScore==5 || computerScore==5){
                     whoWins();
+                    
                 }      
             })
             
@@ -134,6 +135,7 @@
                 gameOver.textContent=(`GameOver.. The Machine Wins ${computerScore} - ${playerScore}!`);
                 } 
                 resultMessage.appendChild(gameOver)
+               
                 
             }  
            
@@ -164,15 +166,15 @@
             } else if (playerSelection== "Rock" && computerSelection== "Paper"){
                 resultMessage.textContent=("Current Result: You lose, Paper beats Rock");
             } else if (playerSelection =="Rock" && computerSelection== "Scissors"){
-                resultMessage.textContent=("Current Result: You Win!, Rock beats Scissors!");
+                resultMessage.textContent=("Current Result: You Win! Rock beats Scissors!");
             }else if (playerSelection== "Paper" && computerSelection== "Scissors"){
                 resultMessage.textContent=("Current Result: You lose, Scissors beats Paper");
             } else if (playerSelection =="Paper" && computerSelection== "Rock"){
-                resultMessage.textContent=("Current Result: You Win!, Paper beats Rock!");
+                resultMessage.textContent=("Current Result: You Win! Paper beats Rock!");
             } else if (playerSelection== "Scissors" && computerSelection== "Rock"){
                 resultMessage.textContent=("Current Result: You lose, Rock beats Scissors");
             } else if (playerSelection =="Scissors" && computerSelection== "Paper") {
-                resultMessage.textContent=("Current Result: You Win!, Scissors beat Paper!");
+                resultMessage.textContent=("Current Result: You Win! Scissors beat Paper!");
             } else {
                 resultMessage.textContent=("Something Went Wrong");
             }
